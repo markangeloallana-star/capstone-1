@@ -1,0 +1,228 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+ background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+ /* background: url(/video.mp4\ \(2\).mp4); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background animation (rain effect) */
+@keyframes rainAnim {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+/* Glassmorphic login box */
+.login-box {
+  position: relative;
+  z-index: 2;
+  width: 350px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  text-align: center;
+  color: #fff;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login-box button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,198,255,0.6);
+}
+
+.login-box p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-box p a {
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+/* Navbar */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+header h1 {
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+nav a {
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #00c6ff;
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* === Weather Icons Animations === */
+.weather-icons {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 1;
+}
+
+.sun {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #FFD700 60%, #FFA500 100%);
+  border-radius: 50%;
+  animation: spin 12s linear infinite;
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+
+.cloud {
+  width: 100px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50px;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: -20px;
+}
+.cloud::before {
+  left: 10px;
+}
+.cloud::after {
+  left: 40px;
+}
+
+.thunder {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid yellow;
+  animation: flash 1.5s infinite;
+}
+
+.nav_bar{ 
+  padding: 5px;
+  display: flex;
+}
+img{
+  height: 30px;
+  width: 30px;
+}
+
+.dash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+  margin-top: 7px;
+}
+
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes flash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+.back-video{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+ 
+@media  (min-aspect-ratio: 16/9){
+  .back-video{
+    width:100%;
+    height:auto;
+  }
+}
+
+
+  @media  (max-aspect-ratio: 16/9){
+  .back-video{
+    width:auto;
+    height:100%;
+  }
+}
+

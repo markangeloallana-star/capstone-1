@@ -87,8 +87,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
+  /* background: rgba(112, 24, 24, 0.4); */
+  /* backdrop-filter: blur(10px); */
   z-index: 3;
 }
 header h1 {
@@ -176,12 +176,17 @@ nav a:hover::after {
 .nav_bar{ 
   padding: 5px;
   display: flex;
-}
-img{
-  height: 30px;
-  width: 30px;
+  margin-left: -2rem;
 }
 
+img{
+  height: 70px;
+  width: 70px;
+}
+
+.nav_bar h1{
+  font-size: 30px;
+}
 .dash{
   display: flex;
   align-items: center;
@@ -189,7 +194,28 @@ img{
   gap: 1rem; 
   margin-top: 7px;
 }
+.social {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #0b0a0a;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
+.social:hover {
+  transform: scale(1.1);
+}
+
+.social img {
+  width: 30px;
+  height: 30px;
+}
 
 /* Animations */
 @keyframes spin {
@@ -225,4 +251,3 @@ img{
     height:100%;
   }
 }
-
